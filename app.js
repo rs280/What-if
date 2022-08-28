@@ -34,6 +34,7 @@ app.post('/start', function (req, res){
 
 app.post('/portfolio', function(req, res){
     if(Number.isNaN(req.body.balance[0]) || !(req.body.balance[0] > 0)){
+        res.render('portfolio', { quote: null, balance : balance , start_date : start_string, end_date : end_string, portfolio : portfolio_array});
 	    throw("balance invalid")
     }
     
@@ -50,6 +51,7 @@ app.post('/portfolio', function(req, res){
     starting_balance = req.body.balance
 
     if(start >= end){
+        res.render('portfolio', { quote: null, balance : balance , start_date : start_string, end_date : end_string, portfolio : portfolio_array});
         throw("End date is either before or the same date as start date")
     }
 
@@ -62,6 +64,7 @@ app.post('/add', function(req, res){
         iex.symbol(req.body.stock_name).chart("date", { date: start , chartByDay: true }).then(function(obj){
         val = obj[0].close * req.body.shares 
 	    if(balance-val < 0){
+            res.render('portfolio', { quote: null, balance : balance , start_date : start_string, end_date : end_string, portfolio : portfolio_array});
 		    throw("cant afford stock")
 	    }
 
@@ -92,6 +95,11 @@ app.post('/quote', function(req, res){
     try{
         iex.symbol(req.body.stock_quote).chart("date", { date: start , chartByDay: true }).then(function(obj){
         let tmp = obj[0].close
+        if (tmp == undefined){
+   
+            res.render('portfolio', { quote: null, balance : balance , start_date : start_string, end_date : end_string, portfolio : portfolio_array});
+            throw("stock not found")
+        }
 
         res.render('portfolio', { quote: tmp, balance : balance , start_date : start_string, end_date : end_string, portfolio : portfolio_array});
         
