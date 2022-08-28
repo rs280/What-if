@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>	
+	<head>		
+		
+		<script src="color.js"></script>
+	</head>			
+	<body>		
+		<html lang="en">
+			<title>What if?
+				
+			</title>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<style>
+			/* Style the body */
+			body {
+				font-family: Arial;
+				margin: 0;
+				background-color: white;}/* Page Content */
+			.content {
+				padding:10px;
+			}/*this is the logo*/
+			[data-theme='dark'] {
+  filter: invert(1) hue-rotate(180deg);
+}
+#theme img {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+		width: 50px;
+		height: 50px;
+    }
+[data-theme='dark'] .logo {
+  content:url("logo-light.png");
+
+}
+[data-theme='dark'] #dark {
+  display: none;
+}
+[data-theme='dark'] #light{
+  display: block;
+}
+[data-theme='light'] #dark {
+  display: block;
+}
+[data-theme='light'] #light {
+  display: none;
+}
+[data-theme='dark'] img{
+  filter: invert(1) hue-rotate(180deg);
+}
+[data-theme='light'] .logo {
+  content:url("logo.png");
+}
+.logo{
+	content: url("logo.png");
+}
+
+	</style>
+	<center>	
+		<img class="logo" >
+	</center>	
+	<style>
+	#vcontainer {
+		display: table;
+		height: 100%;
+		width: 100%;
+		min-height: 400px;
+	}
+	#hcontainer {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}#content {
+		display: inline-block;
+		border: black 20px solid;
+		background-color: white ;
+		text-align: center ;
+		font-size: 20px;  
+		width: 800px;
+		height: 320px;
+	} 
+	</style>
+
+	<style>
+		#vcontainer {
+		display: table;
+		height: 100%;
+		width: 100%;
+		min-height: 400px;
+	}
+	#hcontainer {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}#content {
+		display: inline-block;
+		border: black 20px solid;
+		background-color: #ffffff  ;
+		text-align: center ;
+		font-size: 20px;  
+		width: 800px;
+		height: 320px;
+	} 
+	.button {
+		background-color: black; 
+		border: none;
+		color: white;
+		padding: 15px 102px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 20px;
+		margin: 2px 2px;
+		cursor: pointer;
+	}
+	
+	
+
+	</style> 
+	
+				<div id 
+				<br>  
+				<br>   
+				<br>    
+			<div id="vcontainer">
+				<div id="hcontainer">
+					<div id="content">
+
+				Do you ever think about how much money you <strong>could've, would've</strong> made<br> if you invested in stocks years ago?<br></br>		
+				Well, using What if?, a web application<br> 
+				inspired by the thought experiment, <a href="https://en.wikipedia.org/wiki/Chinese_room" > Searle's room</a> , our website What if? allows you to be an investor <br>without investing!<br></br>		
+				<center>	
+    				<form method="post" action="/start">
+					<input id="test" value = "Enter" type="submit"  class="button"/><br></br>
+    				</form>
+				</center>
+				<div id="theme">
+				
+				<img  id ="light" onclick="toggleTheme('light')" src="https://assets.codepen.io/210284/sun.png">
+				<img id="dark" onclick="toggleTheme('dark')" src="https://assets.codepen.io/210284/moon.png">
+				
+			</div>
+		</div>
+	</div>
+	</div>
+						
+	</body>	
+</html>

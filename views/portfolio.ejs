@@ -1,0 +1,121 @@
+</html>
+<!DOCTYPE html>
+<html>	
+	<head>
+		<script src="color.js"></script>			
+	</head>			
+	<body>		
+		<html lang="en">
+			<title>What if?</title>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			
+			<style>
+				/* Style the body */
+				body {
+					font-family: Arial;
+					margin: 0;
+					background-color: white;}/* Page Content */
+				.content {
+					padding:10px;
+				}/*this is the logo*/
+				[data-theme='dark'] {
+	  filter: invert(1) hue-rotate(180deg);
+	}
+	#theme img {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: 50px;
+			height: 50px;
+		}
+	[data-theme='dark'] .logo {
+	  content:url("logo-light.png");
+	
+	}
+	[data-theme='dark'] #dark {
+	  display: none;
+	}
+	[data-theme='dark'] #light{
+	  display: block;
+	}
+	[data-theme='light'] #dark {
+	  display: block;
+	}
+	[data-theme='light'] #light {
+	  display: none;
+	}
+	[data-theme='dark'] img{
+	  filter: invert(1) hue-rotate(180deg);
+	}
+	[data-theme='light'] .logo {
+	  content:url("logo.png");
+	}
+	.logo{
+		content: url("logo.png");
+	}
+	
+		</style>
+		<center>	
+			<img class="logo" >
+		</center>		
+
+	<style>
+	.button {
+		background-color: black; 
+		border: none;
+		color: white;
+		padding: 10px 60px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 20px;
+		margin: 2px 2px;
+		cursor: pointer;
+	}
+	</style> 
+	
+				<center>	
+				<h1> Get quote from start date: </h1>
+				<h3><%= start_date %></h3>
+				<form method="post" action="/quote"> 
+				<input type = text name = "stock_quote" placeholder="stock symbol">
+				<input type = "submit" name="check" value="check"/>
+				</form>
+					<h1> Quote: </h1>
+					<h3><%= quote %></h3>
+					<h1> Balance: </h1>
+					<h3><%= balance %></h3> 
+					<h1> Start Date: </h1>
+					<h3><%= start_date %></h3>
+					<h1> End Date: </h1>
+					<h3><%= end_date %></h3>
+					<h1> Add to your portfolio </h1>
+					<form method="post" action="/add"> 
+						<input type = text name = "stock_name" placeholder="stock symbol">
+						<input type = text name = "shares" placeholder="amount of shares">
+						<input type = "submit" name="add" value="add"/>
+				</form>
+					<h1> Current Portfolio: </h1>
+					<h3>
+					<% for(var i = 0; i<portfolio.length; i++){ %>
+		    				<h3><%= portfolio[i] %></h3>
+	        			<% } %>
+					</h3>
+				<form method="post" action="/result">
+					<input class="button" type = "submit" name="calculate" value="calc"/><br></br>
+				</form>
+				<form method="post" action="/start">
+					<input class="button" type = "submit" name="back" value="back"/><br></br>
+				</form>
+				</center>	
+				<div id="theme">
+				
+					<img  id ="light" onclick="toggleTheme('light')" src="https://assets.codepen.io/210284/sun.png">
+					<img id="dark" onclick="toggleTheme('dark')" src="https://assets.codepen.io/210284/moon.png">
+					
+				</div>	
+					
+	</body>	
+</html>
+

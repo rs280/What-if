@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> What if? </title>
+	<script src="color.js"></script>
+</head>
+<body>
+</body>
+</html>
+</html>
+<!DOCTYPE html>
+<html>	
+	<head>			
+	</head>			
+	<body>		
+		<html lang="en">
+			<title>Results - What if?</title>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<style>
+				/* Style the body */
+				body {
+					font-family: Arial;
+					margin: 0;
+					background-color: white;}/* Page Content */
+				.content {
+					padding:10px;
+				}/*this is the logo*/
+				[data-theme='dark'] {
+	  filter: invert(1) hue-rotate(180deg);
+	}
+	#theme img {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: 50px;
+			height: 50px;
+		}
+	[data-theme='dark'] .logo {
+	  content:url("logo-light.png");
+	
+	}
+	[data-theme='dark'] #dark {
+	  display: none;
+	}
+	[data-theme='dark'] #light{
+	  display: block;
+	}
+	[data-theme='light'] #dark {
+	  display: block;
+	}
+	[data-theme='light'] #light {
+	  display: none;
+	}
+	[data-theme='dark'] img{
+	  filter: invert(1) hue-rotate(180deg);
+	}
+	[data-theme='light'] .logo {
+	  content:url("logo.png");
+	}
+	.logo{
+		content: url("logo.png");
+	}
+	
+		</style>
+		<center>	
+			<img class="logo" >
+		</center>	
+	
+	<style>
+	.button {
+		background-color: black;
+		color: white;
+		padding: 10px 60px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 20px;
+		margin: 2px 2px;
+		cursor: pointer;
+	}
+	</style> 
+	 
+				<center>	
+	            <h1> Portfolio At End Date: </h1>
+	            <h3>
+		        <% for(var i = 0; i<portfolio.length; i++){ %>
+		        <h3><%= portfolio[i] %></h3>
+	                <% } %>
+	            </h3>
+	
+                <h1> Portfolio Cash Value: </h1>
+	            <h3><%= final_value %></h3>
+                <h1> Initial Balance: </h1>
+	            <h3><%= start_value %></h3>
+                <h1> Total Profit/Loss: </h1>
+                <%if(percent>0){%>
+	                <h3 style="color:green"><%= final_value - start_value%></h3>
+                <% } else { %>
+	                <h3 style="color:red"><%= final_value - start_value%></h3>
+                <% } %>
+                <h1> Total Profit/Loss (%): </h1>
+                <%if(percent>0){%>
+	                <h3 style="color:green"><%= percent%></h3>
+                <% } else { %>
+	                <h3 style="color:red"><%= percent%></h3>
+                <% } %>
+                <form method="post" action="/start">
+	                <input class="button" name="" id="test" value="new search" type="submit"/><br></br>
+                </form>
+                <%if(percent>0){%>
+                    <img src="https://cdn.discordapp.com/attachments/782017363028738079/1013333969854545920/w.png" width="700" height="600">
+                <% } else { %>
+                    <img src="https://cdn.discordapp.com/attachments/782017363028738079/1013333969854545920/w.png" width="700" height="600">
+                <% } %>
+				</center>
+				<div id="theme">
+				
+					<img  id ="light" onclick="toggleTheme('light')" src="https://assets.codepen.io/210284/sun.png">
+					<img id="dark" onclick="toggleTheme('dark')" src="https://assets.codepen.io/210284/moon.png">
+					
+				</div>		
+						
+	</body>	
+</html>
